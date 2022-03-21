@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Team Blue Consulting
+        </title>
+    </head>
+    <body style="text-align: center;">
+        <h1 style="color: blue;">
+            Blue Consulting
+        </h1>
+        <p>
+          Click on the button below to get you attendance form;
+        </p>
+        <button onClick="GenerateForm()">
+            Get Form
+        </button>
+        <p id="FormGenerate"></p>
+ <script>
+    var down = document.getElementById("FormGenerate");
+           
+    // Create a break line element
+    var br = document.createElement("br");
+    function GenerateForm() {
+               
+    // Create a form dynamically
+    var form = document.createElement("form");
+    form.setAttribute("method", "post");
+    form.setAttribute("action", "submit.php");
+ 
+    // Create an input element for Full Name
+    var FN = document.createElement("input");
+    FN.setAttribute("type", "text");
+    FN.setAttribute("name", "FullName");
+    FN.setAttribute("placeholder", "Full Name");
+    FN.setAttribute("required", "true");
+     // Create an input element for emailID
+     var EID = document.createElement("input");
+     EID.setAttribute("type", "text");
+     EID.setAttribute("name", "emailID");
+     EID.setAttribute("placeholder", "E-Mail ID");
+     EID.setAttribute("required", "true");
+    // Create an input element for Mobile Number
+    var MNO = document.createElement("input");
+    MNO.setAttribute("type", "text");
+    MNO.setAttribute("name", "MobileNumber");
+    MNO.setAttribute("placeholder", "Mobile Number");
+    MNO.setAttribute("required", "true");
+    // Create an input element for social media
+    var SM = document.createElement("input");
+    SM.setAttribute("type", "text");
+    SM.setAttribute("name", "socialMedia");
+    SM.setAttribute("placeholder", "Social Media");
+ 
+    
+ 
+    // create a submit button
+    var s = document.createElement("input");
+    s.setAttribute("type", "submit");
+    s.setAttribute("value", "Submit");
+                 
+    // Append the full name input to the form
+    form.appendChild(FN);
+                 
+    // Inserting a line break
+    form.appendChild(br.cloneNode());
+           
+    // Append the emailID to the form
+    form.appendChild(EID);
+    form.appendChild(br.cloneNode());
+        // append the mobile number to the form
+    form.appendChild(MNO);
+    form.appendChild(br.cloneNode());
+    // append the social media to the form
+    form.appendChild(SM);
+    form.appendChild(br.cloneNode());
+                 
+    // Append the submit button to the form
+    form.appendChild(s);
+ 
+    document.getElementsByTagName("body")[0]
+    .appendChild(form);
+    }
+        </script>
+    </body>
+</html>
